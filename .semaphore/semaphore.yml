@@ -5,9 +5,8 @@ agent:
     type: e1-standard-2
   containers:
     - name: main
-      image: 'registry.semaphoreci.com/node:10' # Your primary container where commands are run
-    - name: database
-      image: 'registry.semaphoreci.com/postgres:11'
+      image: hashicorp/terraform
+
 
 blocks:
   - name: Hello World
@@ -17,3 +16,4 @@ blocks:
           commands:
             - checkout # Check out the code
             - echo "Hello from my 'main' container"
+            - terraform -v
